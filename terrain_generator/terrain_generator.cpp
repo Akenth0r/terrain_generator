@@ -1,20 +1,69 @@
-﻿// terrain_generator.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include <GL/glew.h>
+#include <glfw3.h>
 
-#include <iostream>
+using namespace std;
+
+// Function declarations
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
+
+
+// Constants
+const int WINDOW_HEIGHT = 600;
+const int WINDOW_WIDTH = 600;
+const char* WINDOW_TITLE = "Terrain generator";
+
+// Variables
+GLFWwindow* window;
+
+// TODO: 
+// Hello triangle
+// Make camera class
+// Place some cubes into the scene
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    
+
+
+    if (!glfwInit())
+    {
+        cout << "Error! Glfw was not initialized." << endl;
+    }
+    window = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE, NULL, NULL);
+    glfwMakeContextCurrent(window);
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+    glfwSetKeyCallback(window, key_callback);
+
+    GLenum err = glewInit();
+    if (GLEW_OK != err)
+    {
+        printf("Error: %s\n", glewGetErrorString(err));
+        return -1;
+    }
+    printf("GLEW: %s\n", glewGetString(GLEW_VERSION));
+
+    // Main loop
+    while (!glfwWindowShouldClose(window))
+    {
+        
+        // Doing some stuff
+        //glfwDestroyWindow(window);
+
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+    }
+
+
+    glfwDestroyWindow(window);
+    glfwTerminate();
+    exit(EXIT_SUCCESS);
 }
 
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    if (key == GLFW_KEY_ESCAPE)
+    {
+        glfwSetWindowShouldClose(window, true);
+    }
+}

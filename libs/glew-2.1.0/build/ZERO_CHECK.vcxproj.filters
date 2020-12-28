@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Waldemar\source\repos\terrain_generator\libs\glew-2.1.0\build\CMakeFiles\f560b9d1261242f0ee71969d8e807c20\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{FD255DF7-1C37-3792-A948-0172DAE11F5B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
