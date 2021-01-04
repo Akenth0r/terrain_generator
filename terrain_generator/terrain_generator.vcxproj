@@ -152,10 +152,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="PerlinNoise.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="terrain_generator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PerlinNoise.h" />
+    <ClInclude Include="Shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

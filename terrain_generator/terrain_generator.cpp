@@ -3,6 +3,7 @@
 #include <glfw3.h>
 #include <gtc/noise.hpp>
 #include "PerlinNoise.h"
+#include "Shader.h"
 
 using namespace std;
 
@@ -44,8 +45,11 @@ int main()
         
         // Doing some stuff
         //glfwDestroyWindow(window);
-        //glfwSetWindowShouldClose(window, true);
 
+        Shader sh;
+        sh.loadFromFile("data/shaders/pass_through.vert");
+
+        glfwSetWindowShouldClose(window, true);
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
