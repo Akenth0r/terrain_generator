@@ -1,6 +1,8 @@
 ﻿#include <iostream>
 #include <GL/glew.h>
 #include <glfw3.h>
+#include <gtc/noise.hpp>
+#include "PerlinNoise.h"
 
 using namespace std;
 
@@ -16,16 +18,9 @@ const char* WINDOW_TITLE = "Terrain generator";
 // Variables
 GLFWwindow* window;
 
-// TODO: 
-// Hello triangle
-// Make camera class
-// Place some cubes into the scene
 
 int main()
 {
-    
-
-
     if (!glfwInit())
     {
         cout << "Error! Glfw was not initialized." << endl;
@@ -49,14 +44,15 @@ int main()
         
         // Doing some stuff
         //glfwDestroyWindow(window);
+        //glfwSetWindowShouldClose(window, true);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
 
-    glfwDestroyWindow(window);
-    glfwTerminate();
+    /*glfwDestroyWindow(window);
+    glfwTerminate();*/
     exit(EXIT_SUCCESS);
 }
 
